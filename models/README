@@ -1,0 +1,6 @@
+To open this project in Eclipse for source code generation:
+ - Tested with Eclipse 2025-06
+ - File->Import->Existing Projects Into Workspace
+ - Select 'models' directory
+
+Should be able to open TMFTest.genmodel, right click root and generate model code.

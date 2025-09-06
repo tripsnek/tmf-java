@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/models/src" modelPluginID="models" modelName="TMFTest"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="21.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>TMFTest.ecore</foreignModel>
+  <genPackages prefix="Model" disposableProviderFactory="true" ecorePackage="TMFTest.ecore#/">
+    <genClasses ecoreClass="TMFTest.ecore#//ContainerRootType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TMFTest.ecore#//ContainerRootType/contained"/>
+    </genClasses>
+    <genClasses ecoreClass="TMFTest.ecore#//ContainedRootType">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference TMFTest.ecore#//ContainedRootType/container"/>
+    </genClasses>
+    <nestedGenPackages prefix="Core" disposableProviderFactory="true" ecorePackage="TMFTest.ecore#//core">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="TMFTest.ecore#//core/FooClass">
+        <genEnumLiterals ecoreEnumLiteral="TMFTest.ecore#//core/FooClass/SHORT"/>
+        <genEnumLiterals ecoreEnumLiteral="TMFTest.ecore#//core/FooClass/MEDIUM"/>
+        <genEnumLiterals ecoreEnumLiteral="TMFTest.ecore#//core/FooClass/INTERMEDIATE"/>
+        <genEnumLiterals ecoreEnumLiteral="TMFTest.ecore#//core/FooClass/LONG"/>
+      </genEnums>
+      <genClasses image="false" ecoreClass="TMFTest.ecore#//core/IdedEntity">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TMFTest.ecore#//core/IdedEntity/id"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TMFTest.ecore#//core/IdedEntity/editDate"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference TMFTest.ecore#//core/IdedEntity/editUser"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TMFTest.ecore#//core/IdedEntity/locked"/>
+        <genOperations ecoreOperation="TMFTest.ecore#//core/IdedEntity/genId"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="TMFTest.ecore#//core/NamedEntity">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TMFTest.ecore#//core/NamedEntity/name"/>
+      </genClasses>
+      <genClasses ecoreClass="TMFTest.ecore#//core/User">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TMFTest.ecore#//core/User/pass"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TMFTest.ecore#//core/User/salt"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TMFTest.ecore#//core/User/email"/>
+      </genClasses>
+      <genClasses ecoreClass="TMFTest.ecore#//core/FooGroup">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TMFTest.ecore#//core/FooGroup/user"/>
+        <genOperations ecoreOperation="TMFTest.ecore#//core/FooGroup/computeFoosOfClass">
+          <genParameters ecoreParameter="TMFTest.ecore#//core/FooGroup/computeFoosOfClass/fooClass"/>
+        </genOperations>
+        <genOperations ecoreOperation="TMFTest.ecore#//core/FooGroup/getFoosWithBazzles">
+          <genParameters ecoreParameter="TMFTest.ecore#//core/FooGroup/getFoosWithBazzles/bazzles"/>
+        </genOperations>
+        <genOperations ecoreOperation="TMFTest.ecore#//core/FooGroup/freeze"/>
+      </genClasses>
+      <genClasses ecoreClass="TMFTest.ecore#//core/Foo">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference TMFTest.ecore#//core/Foo/group"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TMFTest.ecore#//core/Foo/creationDate"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TMFTest.ecore#//core/Foo/fooClass"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TMFTest.ecore#//core/Foo/range"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TMFTest.ecore#//core/Foo/bars"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference TMFTest.ecore#//core/Foo/oneToOneBazzle"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TMFTest.ecore#//core/Foo/manyAttribute"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute TMFTest.ecore#//core/Foo/unchangeableAttribute"/>
+        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference TMFTest.ecore#//core/Foo/unchangeableReference"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TMFTest.ecore#//core/Foo/transientAttribute"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference TMFTest.ecore#//core/Foo/transientReference"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TMFTest.ecore#//core/Foo/volatileAttribute"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference TMFTest.ecore#//core/Foo/volatileReference"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference TMFTest.ecore#//core/Foo/manyCrossAggregate"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference TMFTest.ecore#//core/Foo/manyCrossAggregateNested"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TMFTest.ecore#//core/Foo/manyValueObjects"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TMFTest.ecore#//core/Foo/oneToOneContainment"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference TMFTest.ecore#//core/Foo/ownedFoos"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference TMFTest.ecore#//core/Foo/subpackageReference"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TMFTest.ecore#//core/Foo/containedThingsWithNoID"/>
+        <genOperations ecoreOperation="TMFTest.ecore#//core/Foo/copyFoo"/>
+      </genClasses>
+      <genClasses ecoreClass="TMFTest.ecore#//core/FooSpecialization"/>
+      <genClasses ecoreClass="TMFTest.ecore#//core/BarSpecializationWithComponents">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TMFTest.ecore#//core/BarSpecializationWithComponents/componentBars"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TMFTest.ecore#//core/BarSpecializationWithComponents/specialName"/>
+      </genClasses>
+      <genClasses ecoreClass="TMFTest.ecore#//core/Bar">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference TMFTest.ecore#//core/Bar/foo"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TMFTest.ecore#//core/Bar/bazzles"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference TMFTest.ecore#//core/Bar/backupFor"/>
+        <genOperations ecoreOperation="TMFTest.ecore#//core/Bar/doSomethingWithFooAndBazzles">
+          <genParameters ecoreParameter="TMFTest.ecore#//core/Bar/doSomethingWithFooAndBazzles/foo"/>
+          <genParameters ecoreParameter="TMFTest.ecore#//core/Bar/doSomethingWithFooAndBazzles/bazzles"/>
+        </genOperations>
+        <genOperations ecoreOperation="TMFTest.ecore#//core/Bar/doSomethingWithClassesAndNumbers">
+          <genParameters ecoreParameter="TMFTest.ecore#//core/Bar/doSomethingWithClassesAndNumbers/classes"/>
+          <genParameters ecoreParameter="TMFTest.ecore#//core/Bar/doSomethingWithClassesAndNumbers/numbers"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="TMFTest.ecore#//core/Bazzle">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference TMFTest.ecore#//core/Bazzle/backupBar"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference TMFTest.ecore#//core/Bazzle/oneToOneFoo"/>
+      </genClasses>
+      <genClasses ecoreClass="TMFTest.ecore#//core/BoundedNumber">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TMFTest.ecore#//core/BoundedNumber/units"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TMFTest.ecore#//core/BoundedNumber/value"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TMFTest.ecore#//core/BoundedNumber/maxValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TMFTest.ecore#//core/BoundedNumber/minValue"/>
+      </genClasses>
+      <genClasses ecoreClass="TMFTest.ecore#//core/ThingWithoutID">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference TMFTest.ecore#//core/ThingWithoutID/singleNonContainment"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference TMFTest.ecore#//core/ThingWithoutID/manyNonContainment"/>
+      </genClasses>
+      <nestedGenPackages prefix="CapitalizedPackage" disposableProviderFactory="true"
+          ecorePackage="TMFTest.ecore#//core/CapitalizedPackage">
+        <genClasses image="false" ecoreClass="TMFTest.ecore#//core/CapitalizedPackage/ExampleInterface">
+          <genOperations ecoreOperation="TMFTest.ecore#//core/CapitalizedPackage/ExampleInterface/interfaceOperation">
+            <genParameters ecoreParameter="TMFTest.ecore#//core/CapitalizedPackage/ExampleInterface/interfaceOperation/fooGroup"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="TMFTest.ecore#//core/CapitalizedPackage/ClassInCapitalizedPackage">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TMFTest.ecore#//core/CapitalizedPackage/ClassInCapitalizedPackage/stringAttr"/>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Analysis" disposableProviderFactory="true" ecorePackage="TMFTest.ecore#//analysis">
+      <genClasses ecoreClass="TMFTest.ecore#//analysis/AnalysisResult">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference TMFTest.ecore#//analysis/AnalysisResult/user"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TMFTest.ecore#//analysis/AnalysisResult/object"/>
+        <genOperations ecoreOperation="TMFTest.ecore#//analysis/AnalysisResult/cloneObject">
+          <genParameters ecoreParameter="TMFTest.ecore#//analysis/AnalysisResult/cloneObject/deepCopy"/>
+          <genParameters ecoreParameter="TMFTest.ecore#//analysis/AnalysisResult/cloneObject/newUser"/>
+        </genOperations>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

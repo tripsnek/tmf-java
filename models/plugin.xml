@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated TMFTest -->
+      <package
+            uri="http://www.tripsnek.com/emf.com.tripsnek.tmftest.model"
+            class="model.ModelPackage"
+            genModel="TMFTest.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated TMFTest -->
+      <package
+            uri="http://www.tripsnek.com/emf.com.tripsnek.tmftest.model.core"
+            class="model.core.CorePackage"
+            genModel="TMFTest.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated TMFTest -->
+      <package
+            uri="http://www.example.org/package1"
+            class="model.core.CapitalizedPackage.CapitalizedPackagePackage"
+            genModel="TMFTest.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated TMFTest -->
+      <package
+            uri="http://www.tripsnek.com/emf.com.tripsnek.tmftest.model.analysis"
+            class="model.analysis.AnalysisPackage"
+            genModel="TMFTest.genmodel"/>
+   </extension>
+
+</plugin>
