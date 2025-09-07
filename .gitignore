@@ -150,4 +150,7 @@ $RECYCLE.BIN/
 # TMF Java specific
 models/*/generated/
 *.genmodel~
+
+# AI settings
 CLAUDE.md
+.claude/settings.local.json
