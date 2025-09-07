@@ -4,6 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.*;
 import org.eclipse.emf.ecore.impl.EClassImpl;
 import org.eclipse.emf.ecore.impl.EReferenceImpl;
@@ -95,7 +97,9 @@ public class TJson {
 
         // Build index of all contained objects
         Map<String, EObject> idsToObjs = new HashMap<>();
-        for (EObject elem : eobj.eAllContents()) {
+        TreeIterator<EObject> iter = eobj.eAllContents();
+        while(iter.hasNext()){
+            EObject elem = iter.next();
             String fullId = TUtils.getFullId(elem);
             if (fullId != null) {
                 idsToObjs.put(fullId, elem);
@@ -209,7 +213,7 @@ public class TJson {
                         }
                         
                         // Mark as proxy
-                        proxy.eSetProxy(true);
+                        ((InternalEObject) proxy).eSetProxyURI(URI.createURI(fullId));
                         
                         // System.out.println("Created proxy object for " + fullId);
                         return proxy;

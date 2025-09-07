@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.tripsnek</groupId>
@@ -38,23 +37,25 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <emf.version>2.42.0</emf.version>
+        <!-- Try using EMF 2.20.0 for all components -->
+        <emf.version>2.39.0</emf.version>
         <jackson.version>2.15.2</jackson.version>
         <junit.version>5.10.0</junit.version>
     </properties>
 
+
     <dependencies>
-        <!-- Eclipse EMF Core -->
+        <!-- Eclipse EMF Core with uniform version -->
         <dependency>
             <groupId>org.eclipse.emf</groupId>
             <artifactId>org.eclipse.emf.ecore</artifactId>
             <version>${emf.version}</version>
         </dependency>
-        
+
         <dependency>
             <groupId>org.eclipse.emf</groupId>
             <artifactId>org.eclipse.emf.common</artifactId>
-            <version>${emf.version}</version>
+            <version>2.40.0</version>
         </dependency>
 
         <dependency>
@@ -133,7 +134,7 @@
             </plugin>
 
             <!-- GPG Plugin for signing (needed for Maven Central) -->
-            <plugin>
+            <!-- <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
                 <version>3.1.0</version>
@@ -146,7 +147,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin> -->
         </plugins>
     </build>
 
