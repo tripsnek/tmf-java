@@ -59,9 +59,9 @@ public class TJson {
     }
 
     // Simple check - warn if no packages registered
-    private static void warnIfNotInitialized() {
+    private static void throwErrorIfNotInitialized() {
         if (packages.isEmpty()) {
-            System.err.println(
+            throw new RuntimeException(
                 "TJson: No packages registered. Call TJson.setPackages([...]) or " +
                 "import and touch your package (e.g., MyPackage.eINSTANCE) before using TJson."
             );
@@ -74,7 +74,7 @@ public class TJson {
      * @param obj
      */
     public static JsonNode makeJson(EObject obj) {
-        warnIfNotInitialized();
+        throwErrorIfNotInitialized();
         return eObjectToJsonAux(obj, new HashMap<>(), false);
     }
 
@@ -87,7 +87,7 @@ public class TJson {
      */
     @SuppressWarnings("unchecked")
     public static <T extends EObject> T makeEObject(JsonNode jsonObj) {
-        warnIfNotInitialized();
+        throwErrorIfNotInitialized();
         
         List<SerializedReference> serializedReferences = new ArrayList<>();
 
@@ -235,7 +235,7 @@ public class TJson {
      * @param objs
      */
     public static ArrayNode makeJsonArray(List<? extends EObject> objs) {
-        warnIfNotInitialized();
+        throwErrorIfNotInitialized();
         
         ArrayNode jsonArray = objectMapper.createArrayNode();
         if (objs != null) {
@@ -253,7 +253,7 @@ public class TJson {
      * @return
      */
     public static List<? extends EObject> makeEObjectArray(ArrayNode jsonArray) {
-        warnIfNotInitialized();
+        throwErrorIfNotInitialized();
         
         List<EObject> eobjArray = new ArrayList<>();
         if (jsonArray != null && jsonArray.isArray()) {
