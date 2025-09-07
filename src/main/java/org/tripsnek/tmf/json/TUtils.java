@@ -156,7 +156,7 @@ public class TUtils {
             EEnum eenum = (EEnum) attrType;
             EEnumLiteral literal = eenum.getEEnumLiteral(stringVal);
             if (literal != null) {
-                return literal.getLiteral();
+                return literal.getInstance();
             } else {
                 System.err.println("Could not parse literal value " + stringVal + " for " + eenum.getName());
             }
