@@ -234,7 +234,7 @@ public class TJson {
      *
      * @param objs
      */
-    public static JsonNode makeJsonArray(List<EObject> objs) {
+    public static ArrayNode makeJsonArray(List<? extends EObject> objs) {
         warnIfNotInitialized();
         
         ArrayNode jsonArray = objectMapper.createArrayNode();
@@ -252,7 +252,7 @@ public class TJson {
      * @param jsonArray
      * @return
      */
-    public static List<EObject> makeEObjectArray(JsonNode jsonArray) {
+    public static List<? extends EObject> makeEObjectArray(ArrayNode jsonArray) {
         warnIfNotInitialized();
         
         List<EObject> eobjArray = new ArrayList<>();
