@@ -30,6 +30,9 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <ul>
  *   <li>{@link model.core.impl.ThingWithoutIDImpl#getSingleNonContainment <em>Single Non Containment</em>}</li>
  *   <li>{@link model.core.impl.ThingWithoutIDImpl#getManyNonContainment <em>Many Non Containment</em>}</li>
+ *   <li>{@link model.core.impl.ThingWithoutIDImpl#getRefToOtherIdlessThing <em>Ref To Other Idless Thing</em>}</li>
+ *   <li>{@link model.core.impl.ThingWithoutIDImpl#getManyRefToOtherIdlessThings <em>Many Ref To Other Idless Things</em>}</li>
+ *   <li>{@link model.core.impl.ThingWithoutIDImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,6 +57,46 @@ public class ThingWithoutIDImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected EList<Foo> manyNonContainment;
+
+	/**
+	 * The cached value of the '{@link #getRefToOtherIdlessThing() <em>Ref To Other Idless Thing</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRefToOtherIdlessThing()
+	 * @generated
+	 * @ordered
+	 */
+	protected ThingWithoutID refToOtherIdlessThing;
+
+	/**
+	 * The cached value of the '{@link #getManyRefToOtherIdlessThings() <em>Many Ref To Other Idless Things</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getManyRefToOtherIdlessThings()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ThingWithoutID> manyRefToOtherIdlessThings;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +176,82 @@ public class ThingWithoutIDImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	@Override
+	public ThingWithoutID getRefToOtherIdlessThing() {
+		if (refToOtherIdlessThing != null && refToOtherIdlessThing.eIsProxy()) {
+			InternalEObject oldRefToOtherIdlessThing = (InternalEObject)refToOtherIdlessThing;
+			refToOtherIdlessThing = (ThingWithoutID)eResolveProxy(oldRefToOtherIdlessThing);
+			if (refToOtherIdlessThing != oldRefToOtherIdlessThing) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.THING_WITHOUT_ID__REF_TO_OTHER_IDLESS_THING, oldRefToOtherIdlessThing, refToOtherIdlessThing));
+			}
+		}
+		return refToOtherIdlessThing;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ThingWithoutID basicGetRefToOtherIdlessThing() {
+		return refToOtherIdlessThing;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRefToOtherIdlessThing(ThingWithoutID newRefToOtherIdlessThing) {
+		ThingWithoutID oldRefToOtherIdlessThing = refToOtherIdlessThing;
+		refToOtherIdlessThing = newRefToOtherIdlessThing;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.THING_WITHOUT_ID__REF_TO_OTHER_IDLESS_THING, oldRefToOtherIdlessThing, refToOtherIdlessThing));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<ThingWithoutID> getManyRefToOtherIdlessThings() {
+		if (manyRefToOtherIdlessThings == null) {
+			manyRefToOtherIdlessThings = new EObjectResolvingEList<ThingWithoutID>(ThingWithoutID.class, this, CorePackage.THING_WITHOUT_ID__MANY_REF_TO_OTHER_IDLESS_THINGS);
+		}
+		return manyRefToOtherIdlessThings;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.THING_WITHOUT_ID__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.THING_WITHOUT_ID__SINGLE_NON_CONTAINMENT:
@@ -140,6 +259,13 @@ public class ThingWithoutIDImpl extends MinimalEObjectImpl.Container implements 
 				return basicGetSingleNonContainment();
 			case CorePackage.THING_WITHOUT_ID__MANY_NON_CONTAINMENT:
 				return getManyNonContainment();
+			case CorePackage.THING_WITHOUT_ID__REF_TO_OTHER_IDLESS_THING:
+				if (resolve) return getRefToOtherIdlessThing();
+				return basicGetRefToOtherIdlessThing();
+			case CorePackage.THING_WITHOUT_ID__MANY_REF_TO_OTHER_IDLESS_THINGS:
+				return getManyRefToOtherIdlessThings();
+			case CorePackage.THING_WITHOUT_ID__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -160,6 +286,16 @@ public class ThingWithoutIDImpl extends MinimalEObjectImpl.Container implements 
 				getManyNonContainment().clear();
 				getManyNonContainment().addAll((Collection<? extends Foo>)newValue);
 				return;
+			case CorePackage.THING_WITHOUT_ID__REF_TO_OTHER_IDLESS_THING:
+				setRefToOtherIdlessThing((ThingWithoutID)newValue);
+				return;
+			case CorePackage.THING_WITHOUT_ID__MANY_REF_TO_OTHER_IDLESS_THINGS:
+				getManyRefToOtherIdlessThings().clear();
+				getManyRefToOtherIdlessThings().addAll((Collection<? extends ThingWithoutID>)newValue);
+				return;
+			case CorePackage.THING_WITHOUT_ID__NAME:
+				setName((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -178,6 +314,15 @@ public class ThingWithoutIDImpl extends MinimalEObjectImpl.Container implements 
 			case CorePackage.THING_WITHOUT_ID__MANY_NON_CONTAINMENT:
 				getManyNonContainment().clear();
 				return;
+			case CorePackage.THING_WITHOUT_ID__REF_TO_OTHER_IDLESS_THING:
+				setRefToOtherIdlessThing((ThingWithoutID)null);
+				return;
+			case CorePackage.THING_WITHOUT_ID__MANY_REF_TO_OTHER_IDLESS_THINGS:
+				getManyRefToOtherIdlessThings().clear();
+				return;
+			case CorePackage.THING_WITHOUT_ID__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -194,8 +339,30 @@ public class ThingWithoutIDImpl extends MinimalEObjectImpl.Container implements 
 				return singleNonContainment != null;
 			case CorePackage.THING_WITHOUT_ID__MANY_NON_CONTAINMENT:
 				return manyNonContainment != null && !manyNonContainment.isEmpty();
+			case CorePackage.THING_WITHOUT_ID__REF_TO_OTHER_IDLESS_THING:
+				return refToOtherIdlessThing != null;
+			case CorePackage.THING_WITHOUT_ID__MANY_REF_TO_OTHER_IDLESS_THINGS:
+				return manyRefToOtherIdlessThings != null && !manyRefToOtherIdlessThings.isEmpty();
+			case CorePackage.THING_WITHOUT_ID__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ThingWithoutIDImpl

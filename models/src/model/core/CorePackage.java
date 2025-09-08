@@ -676,13 +676,22 @@ public interface CorePackage extends EPackage {
 	int FOO__CONTAINED_THINGS_WITH_NO_ID = NAMED_ENTITY_FEATURE_COUNT + 19;
 
 	/**
+	 * The feature id for the '<em><b>Contained Things With No ID2</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOO__CONTAINED_THINGS_WITH_NO_ID2 = NAMED_ENTITY_FEATURE_COUNT + 20;
+
+	/**
 	 * The number of structural features of the '<em>Foo</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FOO_FEATURE_COUNT = NAMED_ENTITY_FEATURE_COUNT + 20;
+	int FOO_FEATURE_COUNT = NAMED_ENTITY_FEATURE_COUNT + 21;
 
 	/**
 	 * The operation id for the '<em>Gen Id</em>' operation.
@@ -945,6 +954,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int FOO_SPECIALIZATION__CONTAINED_THINGS_WITH_NO_ID = FOO__CONTAINED_THINGS_WITH_NO_ID;
+
+	/**
+	 * The feature id for the '<em><b>Contained Things With No ID2</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOO_SPECIALIZATION__CONTAINED_THINGS_WITH_NO_ID2 = FOO__CONTAINED_THINGS_WITH_NO_ID2;
 
 	/**
 	 * The number of structural features of the '<em>Foo Specialization</em>' class.
@@ -1447,13 +1465,40 @@ public interface CorePackage extends EPackage {
 	int THING_WITHOUT_ID__MANY_NON_CONTAINMENT = 1;
 
 	/**
+	 * The feature id for the '<em><b>Ref To Other Idless Thing</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THING_WITHOUT_ID__REF_TO_OTHER_IDLESS_THING = 2;
+
+	/**
+	 * The feature id for the '<em><b>Many Ref To Other Idless Things</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THING_WITHOUT_ID__MANY_REF_TO_OTHER_IDLESS_THINGS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THING_WITHOUT_ID__NAME = 4;
+
+	/**
 	 * The number of structural features of the '<em>Thing Without ID</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THING_WITHOUT_ID_FEATURE_COUNT = 2;
+	int THING_WITHOUT_ID_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Thing Without ID</em>' class.
@@ -1885,6 +1930,17 @@ public interface CorePackage extends EPackage {
 	EReference getFoo_ContainedThingsWithNoID();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link model.core.Foo#getContainedThingsWithNoID2 <em>Contained Things With No ID2</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Contained Things With No ID2</em>'.
+	 * @see model.core.Foo#getContainedThingsWithNoID2()
+	 * @see #getFoo()
+	 * @generated
+	 */
+	EReference getFoo_ContainedThingsWithNoID2();
+
+	/**
 	 * Returns the meta object for the '{@link model.core.Foo#copyFoo() <em>Copy Foo</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2116,6 +2172,39 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getThingWithoutID_ManyNonContainment();
+
+	/**
+	 * Returns the meta object for the reference '{@link model.core.ThingWithoutID#getRefToOtherIdlessThing <em>Ref To Other Idless Thing</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Ref To Other Idless Thing</em>'.
+	 * @see model.core.ThingWithoutID#getRefToOtherIdlessThing()
+	 * @see #getThingWithoutID()
+	 * @generated
+	 */
+	EReference getThingWithoutID_RefToOtherIdlessThing();
+
+	/**
+	 * Returns the meta object for the reference list '{@link model.core.ThingWithoutID#getManyRefToOtherIdlessThings <em>Many Ref To Other Idless Things</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Many Ref To Other Idless Things</em>'.
+	 * @see model.core.ThingWithoutID#getManyRefToOtherIdlessThings()
+	 * @see #getThingWithoutID()
+	 * @generated
+	 */
+	EReference getThingWithoutID_ManyRefToOtherIdlessThings();
+
+	/**
+	 * Returns the meta object for the attribute '{@link model.core.ThingWithoutID#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see model.core.ThingWithoutID#getName()
+	 * @see #getThingWithoutID()
+	 * @generated
+	 */
+	EAttribute getThingWithoutID_Name();
 
 	/**
 	 * Returns the meta object for enum '{@link model.core.FooClass <em>Foo Class</em>}'.
@@ -2465,6 +2554,14 @@ public interface CorePackage extends EPackage {
 		EReference FOO__CONTAINED_THINGS_WITH_NO_ID = eINSTANCE.getFoo_ContainedThingsWithNoID();
 
 		/**
+		 * The meta object literal for the '<em><b>Contained Things With No ID2</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FOO__CONTAINED_THINGS_WITH_NO_ID2 = eINSTANCE.getFoo_ContainedThingsWithNoID2();
+
+		/**
 		 * The meta object literal for the '<em><b>Copy Foo</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2651,6 +2748,30 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference THING_WITHOUT_ID__MANY_NON_CONTAINMENT = eINSTANCE.getThingWithoutID_ManyNonContainment();
+
+		/**
+		 * The meta object literal for the '<em><b>Ref To Other Idless Thing</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference THING_WITHOUT_ID__REF_TO_OTHER_IDLESS_THING = eINSTANCE.getThingWithoutID_RefToOtherIdlessThing();
+
+		/**
+		 * The meta object literal for the '<em><b>Many Ref To Other Idless Things</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference THING_WITHOUT_ID__MANY_REF_TO_OTHER_IDLESS_THINGS = eINSTANCE.getThingWithoutID_ManyRefToOtherIdlessThings();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute THING_WITHOUT_ID__NAME = eINSTANCE.getThingWithoutID_Name();
 
 		/**
 		 * The meta object literal for the '{@link model.core.FooClass <em>Foo Class</em>}' enum.

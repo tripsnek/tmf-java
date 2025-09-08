@@ -63,6 +63,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link model.core.impl.FooImpl#getOwnedFoos <em>Owned Foos</em>}</li>
  *   <li>{@link model.core.impl.FooImpl#getSubpackageReference <em>Subpackage Reference</em>}</li>
  *   <li>{@link model.core.impl.FooImpl#getContainedThingsWithNoID <em>Contained Things With No ID</em>}</li>
+ *   <li>{@link model.core.impl.FooImpl#getContainedThingsWithNoID2 <em>Contained Things With No ID2</em>}</li>
  * </ul>
  *
  * @generated
@@ -297,6 +298,16 @@ public class FooImpl extends NamedEntityImpl implements Foo {
 	 * @ordered
 	 */
 	protected EList<ThingWithoutID> containedThingsWithNoID;
+
+	/**
+	 * The cached value of the '{@link #getContainedThingsWithNoID2() <em>Contained Things With No ID2</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainedThingsWithNoID2()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ThingWithoutID> containedThingsWithNoID2;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -849,6 +860,19 @@ public class FooImpl extends NamedEntityImpl implements Foo {
 	 * @generated
 	 */
 	@Override
+	public EList<ThingWithoutID> getContainedThingsWithNoID2() {
+		if (containedThingsWithNoID2 == null) {
+			containedThingsWithNoID2 = new EObjectContainmentEList<ThingWithoutID>(ThingWithoutID.class, this, CorePackage.FOO__CONTAINED_THINGS_WITH_NO_ID2);
+		}
+		return containedThingsWithNoID2;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Foo copyFoo() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -896,6 +920,8 @@ public class FooImpl extends NamedEntityImpl implements Foo {
 				return basicSetOneToOneContainment(null, msgs);
 			case CorePackage.FOO__CONTAINED_THINGS_WITH_NO_ID:
 				return ((InternalEList<?>)getContainedThingsWithNoID()).basicRemove(otherEnd, msgs);
+			case CorePackage.FOO__CONTAINED_THINGS_WITH_NO_ID2:
+				return ((InternalEList<?>)getContainedThingsWithNoID2()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -953,6 +979,8 @@ public class FooImpl extends NamedEntityImpl implements Foo {
 				return basicGetSubpackageReference();
 			case CorePackage.FOO__CONTAINED_THINGS_WITH_NO_ID:
 				return getContainedThingsWithNoID();
+			case CorePackage.FOO__CONTAINED_THINGS_WITH_NO_ID2:
+				return getContainedThingsWithNoID2();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1027,6 +1055,10 @@ public class FooImpl extends NamedEntityImpl implements Foo {
 				getContainedThingsWithNoID().clear();
 				getContainedThingsWithNoID().addAll((Collection<? extends ThingWithoutID>)newValue);
 				return;
+			case CorePackage.FOO__CONTAINED_THINGS_WITH_NO_ID2:
+				getContainedThingsWithNoID2().clear();
+				getContainedThingsWithNoID2().addAll((Collection<? extends ThingWithoutID>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1093,6 +1125,9 @@ public class FooImpl extends NamedEntityImpl implements Foo {
 			case CorePackage.FOO__CONTAINED_THINGS_WITH_NO_ID:
 				getContainedThingsWithNoID().clear();
 				return;
+			case CorePackage.FOO__CONTAINED_THINGS_WITH_NO_ID2:
+				getContainedThingsWithNoID2().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1145,6 +1180,8 @@ public class FooImpl extends NamedEntityImpl implements Foo {
 				return subpackageReference != null;
 			case CorePackage.FOO__CONTAINED_THINGS_WITH_NO_ID:
 				return containedThingsWithNoID != null && !containedThingsWithNoID.isEmpty();
+			case CorePackage.FOO__CONTAINED_THINGS_WITH_NO_ID2:
+				return containedThingsWithNoID2 != null && !containedThingsWithNoID2.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

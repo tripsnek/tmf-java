@@ -590,6 +590,16 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getFoo_ContainedThingsWithNoID2() {
+		return (EReference)fooEClass.getEStructuralFeatures().get(20);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EOperation getFoo__CopyFoo() {
 		return fooEClass.getEOperations().get(0);
 	}
@@ -810,6 +820,36 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getThingWithoutID_RefToOtherIdlessThing() {
+		return (EReference)thingWithoutIDEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getThingWithoutID_ManyRefToOtherIdlessThings() {
+		return (EReference)thingWithoutIDEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getThingWithoutID_Name() {
+		return (EAttribute)thingWithoutIDEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getFooClass() {
 		return fooClassEEnum;
 	}
@@ -885,6 +925,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		createEReference(fooEClass, FOO__OWNED_FOOS);
 		createEReference(fooEClass, FOO__SUBPACKAGE_REFERENCE);
 		createEReference(fooEClass, FOO__CONTAINED_THINGS_WITH_NO_ID);
+		createEReference(fooEClass, FOO__CONTAINED_THINGS_WITH_NO_ID2);
 		createEOperation(fooEClass, FOO___COPY_FOO);
 
 		fooSpecializationEClass = createEClass(FOO_SPECIALIZATION);
@@ -913,6 +954,9 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		thingWithoutIDEClass = createEClass(THING_WITHOUT_ID);
 		createEReference(thingWithoutIDEClass, THING_WITHOUT_ID__SINGLE_NON_CONTAINMENT);
 		createEReference(thingWithoutIDEClass, THING_WITHOUT_ID__MANY_NON_CONTAINMENT);
+		createEReference(thingWithoutIDEClass, THING_WITHOUT_ID__REF_TO_OTHER_IDLESS_THING);
+		createEReference(thingWithoutIDEClass, THING_WITHOUT_ID__MANY_REF_TO_OTHER_IDLESS_THINGS);
+		createEAttribute(thingWithoutIDEClass, THING_WITHOUT_ID__NAME);
 
 		// Create enums
 		fooClassEEnum = createEEnum(FOO_CLASS);
@@ -1010,6 +1054,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEReference(getFoo_OwnedFoos(), this.getFoo(), null, "ownedFoos", null, 0, -1, Foo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFoo_SubpackageReference(), theCapitalizedPackagePackage.getClassInCapitalizedPackage(), null, "subpackageReference", null, 0, 1, Foo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFoo_ContainedThingsWithNoID(), this.getThingWithoutID(), null, "containedThingsWithNoID", null, 0, -1, Foo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFoo_ContainedThingsWithNoID2(), this.getThingWithoutID(), null, "containedThingsWithNoID2", null, 0, -1, Foo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getFoo__CopyFoo(), this.getFoo(), "copyFoo", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1045,6 +1090,9 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEClass(thingWithoutIDEClass, ThingWithoutID.class, "ThingWithoutID", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getThingWithoutID_SingleNonContainment(), this.getFoo(), null, "singleNonContainment", null, 0, 1, ThingWithoutID.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getThingWithoutID_ManyNonContainment(), this.getFoo(), null, "manyNonContainment", null, 0, -1, ThingWithoutID.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getThingWithoutID_RefToOtherIdlessThing(), this.getThingWithoutID(), null, "refToOtherIdlessThing", null, 0, 1, ThingWithoutID.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getThingWithoutID_ManyRefToOtherIdlessThings(), this.getThingWithoutID(), null, "manyRefToOtherIdlessThings", null, 0, -1, ThingWithoutID.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getThingWithoutID_Name(), ecorePackage.getEString(), "name", null, 0, 1, ThingWithoutID.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(fooClassEEnum, FooClass.class, "FooClass");

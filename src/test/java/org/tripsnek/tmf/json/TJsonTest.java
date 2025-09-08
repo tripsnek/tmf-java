@@ -20,6 +20,7 @@ import model.core.BoundedNumber;
 import model.core.CoreFactory;
 import model.core.Foo;
 import model.core.FooClass;
+import model.core.ThingWithoutID;
 
 public class TJsonTest {
 
@@ -92,6 +93,20 @@ public class TJsonTest {
         Bar foo2Bar = fact.createBar();
         foo2Bar.setName("Foo2Bar");
         foo2.getBars().add(foo2Bar);
+
+        //id-less thing references
+        ThingWithoutID idless1 = CoreFactory.eINSTANCE.createThingWithoutID();
+        idless1.setName("idLess1");
+        ThingWithoutID idless2 = CoreFactory.eINSTANCE.createThingWithoutID();
+        idless2.setName("idLess2");
+        ThingWithoutID idless3 = CoreFactory.eINSTANCE.createThingWithoutID();
+        idless3.setName("idLess3");
+        foo.getContainedThingsWithNoID().add(idless1);
+        foo.getContainedThingsWithNoID().add(idless2);
+        foo.getContainedThingsWithNoID2().add(idless3);
+        idless1.setRefToOtherIdlessThing(idless2);
+        idless1.getManyRefToOtherIdlessThings().add(idless2);
+        idless1.getManyRefToOtherIdlessThings().add(idless3);
 
         // Validate Foo contents before serialization
         assertEquals("Foo", foo.eClass().getName());
@@ -312,4 +327,31 @@ public class TJsonTest {
         assertEquals(0, deserializedEmptyFoo.getManyAttribute().size());
         assertEquals(0, deserializedEmptyFoo.getManyValueObjects().size());
     }
+
+    @Test
+    void shouldDeserializeSimpleIdLessLists() {
+        assertEquals(2, deserializedFoo.getContainedThingsWithNoID().size());
+        assertEquals(1, deserializedFoo.getContainedThingsWithNoID2().size());
+        assertEquals("idLess1", deserializedFoo.getContainedThingsWithNoID().get(0).getName());
+        assertEquals("idLess2", deserializedFoo.getContainedThingsWithNoID().get(1).getName());
+        assertEquals("idLess3", deserializedFoo.getContainedThingsWithNoID2().get(0).getName());
+    }
+
+    @Test
+    void shouldDeserializeReferencesBetweenIdLessThingsSingleValued() {
+        ThingWithoutID idless1 = deserializedFoo.getContainedThingsWithNoID().get(0);
+        ThingWithoutID idless2 = deserializedFoo.getContainedThingsWithNoID().get(1);
+        assertSame(idless2, idless1.getRefToOtherIdlessThing());
+    }
+
+    @Test
+    void shouldDeserializeReferencesBetweenIdLessThingsManyValued() {
+        ThingWithoutID idless1 = deserializedFoo.getContainedThingsWithNoID().get(0);
+        ThingWithoutID idless2 = deserializedFoo.getContainedThingsWithNoID().get(1);
+        ThingWithoutID idless3 = deserializedFoo.getContainedThingsWithNoID2().get(0);
+        assertSame(idless2, idless1.getManyRefToOtherIdlessThings().get(0));
+        assertSame(idless3, idless1.getManyRefToOtherIdlessThings().get(1));
+    }    
+
+    
 }

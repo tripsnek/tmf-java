@@ -73,6 +73,7 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference TMFTest.ecore#//core/Foo/subpackageReference"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TMFTest.ecore#//core/Foo/containedThingsWithNoID"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TMFTest.ecore#//core/Foo/containedThingsWithNoID2"/>
         <genOperations ecoreOperation="TMFTest.ecore#//core/Foo/copyFoo"/>
       </genClasses>
       <genClasses ecoreClass="TMFTest.ecore#//core/FooSpecialization"/>
@@ -111,6 +112,11 @@
             ecoreFeature="ecore:EReference TMFTest.ecore#//core/ThingWithoutID/singleNonContainment"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference TMFTest.ecore#//core/ThingWithoutID/manyNonContainment"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference TMFTest.ecore#//core/ThingWithoutID/refToOtherIdlessThing"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference TMFTest.ecore#//core/ThingWithoutID/manyRefToOtherIdlessThings"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TMFTest.ecore#//core/ThingWithoutID/name"/>
       </genClasses>
       <nestedGenPackages prefix="CapitalizedPackage" disposableProviderFactory="true"
           ecorePackage="TMFTest.ecore#//core/CapitalizedPackage">

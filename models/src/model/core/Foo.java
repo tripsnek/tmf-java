@@ -37,6 +37,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link model.core.Foo#getOwnedFoos <em>Owned Foos</em>}</li>
  *   <li>{@link model.core.Foo#getSubpackageReference <em>Subpackage Reference</em>}</li>
  *   <li>{@link model.core.Foo#getContainedThingsWithNoID <em>Contained Things With No ID</em>}</li>
+ *   <li>{@link model.core.Foo#getContainedThingsWithNoID2 <em>Contained Things With No ID2</em>}</li>
  * </ul>
  *
  * @see model.core.CorePackage#getFoo()
@@ -398,6 +399,18 @@ public interface Foo extends NamedEntity {
 	 * @generated
 	 */
 	EList<ThingWithoutID> getContainedThingsWithNoID();
+
+	/**
+	 * Returns the value of the '<em><b>Contained Things With No ID2</b></em>' containment reference list.
+	 * The list contents are of type {@link model.core.ThingWithoutID}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Contained Things With No ID2</em>' containment reference list.
+	 * @see model.core.CorePackage#getFoo_ContainedThingsWithNoID2()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ThingWithoutID> getContainedThingsWithNoID2();
 
 	/**
 	 * <!-- begin-user-doc -->
