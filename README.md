@@ -1,6 +1,6 @@
 # TMF Java
 
-[![Maven Central](https://img.shields.io/maven-central/v/org.tripsnek/tmf-java.svg)](https://search.maven.org/artifact/org.tripsnek/tmf-java)
+[![Maven Central](https://img.shields.io/maven-central/v/com.tripsnek/tmf-java.svg)](https://search.maven.org/artifact/com.tripsnek/tmf-java)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 TMF Java provides JSON serialization and deserialization capabilities for Eclipse Modeling Framework (EMF) EObjects, enabling seamless interoperability between Java backends and TypeScript frontends using the [TypeScript Modeling Framework (TMF)](https://www.npmjs.com/package/@tripsnek/tmf).
@@ -20,7 +20,7 @@ Add TMF Java to your Maven project:
 
 ```xml
 <dependency>
-    <groupId>org.tripsnek</groupId>
+    <groupId>com.tripsnek</groupId>
     <artifactId>tmf-java</artifactId>
     <version>1.0.0</version>
 </dependency>
@@ -28,7 +28,7 @@ Add TMF Java to your Maven project:
 
 Or with Gradle:
 ```gradle
-implementation 'org.tripsnek:tmf-java:1.0.0'
+implementation 'com.tripsnek:tmf-java:1.0.0'
 ```
 
 ## Quick Start
@@ -49,8 +49,8 @@ npx @tripsnek/tmf ./path/to/your/model.ecore
 ### 2. Basic Usage
 
 ```java
-import org.tripsnek.tmf.json.TJson;
-import org.tripsnek.tmf.json.TUtils;
+import com.tripsnek.tmf.json.TJson;
+import com.tripsnek.tmf.json.TUtils;
 import com.mycompany.model.MyModelPackage;
 import com.mycompany.model.Blog;
 import com.mycompany.model.Post;

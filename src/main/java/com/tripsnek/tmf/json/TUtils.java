@@ -1,4 +1,4 @@
-package org.tripsnek.tmf.json;
+package com.tripsnek.tmf.json;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

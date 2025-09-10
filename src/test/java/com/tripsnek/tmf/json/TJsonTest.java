@@ -1,4 +1,4 @@
-package org.tripsnek.tmf.json;
+package com.tripsnek.tmf.json;
 
 import static org.junit.jupiter.api.Assertions.*;
 
