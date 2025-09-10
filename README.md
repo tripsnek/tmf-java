@@ -16,8 +16,6 @@ TMF Java bridges this gap by providing `TJson` - a Java equivalent to TMF's Type
 
 ## Installation
 
-**TODO: awaiting package publication**
-
 Add TMF Java to your Maven project:
 
 ```xml
